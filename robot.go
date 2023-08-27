@@ -45,7 +45,7 @@ func init() {
 
 
 func atMessageEventHandler(event *dto.WSPayload, data *dto.WSATMessageData) error {
-    if strings.HasSuffix(data.Content, "> 你好") { // 如果@机器人并输入 你好 则回复 你好。
+    if strings.HasSuffix(data.Content, "> 你好") { 
         api.PostMessage(ctx, data.ChannelID, &dto.MessageToCreate{MsgID: data.ID, Content: "你好"})
     } else if strings.HasSuffix(data.Content, "顺") { 
         api.PostMessage(ctx, data.ChannelID, &dto.MessageToCreate{MsgID: data.ID, Content: "顺风顺水"})
